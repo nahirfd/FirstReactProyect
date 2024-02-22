@@ -1,17 +1,17 @@
-import "./App.css"
-import { Navbar } from "./components/layout/Navbar"
-import { ItemListContainer } from "./components/pages/ItemListContainer"
+import "./App.css";
+import ItemCountContainer from "./components/common/itemCount/ItemCountContainer";
 
+import { Navbar } from "./components/layout/navbar/Navbar";
+import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 
 function App() {
-
   return (
-    <div>
+    <>
       <Navbar />
-
       <ItemListContainer />
-    </div>
-  )
+      <ItemCountContainer stock={5} />
+    </>
+  );
 }
 
-export default App
+export default App;
