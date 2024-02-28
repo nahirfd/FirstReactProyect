@@ -1,3 +1,13 @@
-.navStyle {
-    background-color: azure;
+.botonera {
+  background-color: #cce493;
+}
+.botonera img {
+  width: 100px;
+  margin-right: 80px;
+}
+.botonera ul li a {
+  color: #36634a;
+}
+.botonera ul li a:hover {
+  color: #c5b0a4;
 }

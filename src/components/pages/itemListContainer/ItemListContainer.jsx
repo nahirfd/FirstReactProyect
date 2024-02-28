@@ -29,9 +29,3 @@ const ItemListContainer = () => {
 
 export default ItemListContainer;
 
-{
-  /* <h2> TODOS LOS PRODUCTOS </h2>
-<ProductCard titulo={"yerba 1 "} desc={"menta y poleo"} precio={3500} />
-<ProductCard titulo={"yerba 2 "} desc={"citric"} precio={4000} />
-<ProductCard titulo={"yerba 3 "} desc={"frutos rojos"} precio={3000} /> */
-}

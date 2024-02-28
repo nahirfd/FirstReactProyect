@@ -12,9 +12,10 @@ function App() {
     <>
       <Navbar />
       <ItemListContainer />
-      <ItemCountContainer stock={5} />
+      
       <hr></hr>
       <ItemDetailContainer />
+      
     </>
   );
 }

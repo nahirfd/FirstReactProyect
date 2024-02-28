@@ -1,3 +1,11 @@
-.cards {
-  border: 2px solid black;
+.cardsFigure {
+  width: 30%;
+  border: solid gray 1px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  padding: 0 15px;
+  text-align: center;
+}
+.cardsFigure img {
+  width: 50%;
 }
