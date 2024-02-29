@@ -1,31 +1,24 @@
-import { products } from "../../../productsMock";
+import {useParams} from "react-router-dom"
 import { useState, useEffect } from "react";
 import ItemDetail from "./ItemDetail";
+import { getProduct } from "../../../asyncMock";
 
 const ItemDetailContainer = () => {
-  const [detail, setDetail] = useState({});
+  const { id } = useParams();
 
-  let id = 2;
+  const [item, setItem] = useState({});
 
   useEffect(() => {
-    const tarea = new Promise((resolve, reject) => {
-      resolve(products[id - 1]);
-      reject("error");
-    });
-    tarea
-      .then((res) => {
-        setDetail(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    getProduct(id)
+    .then(resp => setItem(resp));
   }, []);
 
   return (
     <>
-      <ItemDetail detail={detail} />
+      {item && <ItemDetail  {...item}/>}
     </>
   );
 };
+
 
 export default ItemDetailContainer;

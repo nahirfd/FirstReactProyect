@@ -10,7 +10,8 @@ export const ProductCard = ({ img, title, description, price }) => {
       <h4>{title}</h4>
       <h3>{description}</h3>
       <h3>{price}</h3>
-      <ItemCountContainer stock={5} />
+      <button>Detalle</button>
+      {/* <ItemCountContainer stock={5} /> */}
     </div>
   );
 };

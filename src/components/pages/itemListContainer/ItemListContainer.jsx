@@ -1,31 +1,27 @@
-/* import { ProductCard } from "../../common/ProductCard/ProductCard"; */
 import { useState, useEffect } from "react";
-import { products } from "../../../productsMock";
+import { getProducts } from "../../../asyncMock";
 import ItemList from "./ItemList";
 
 const ItemListContainer = () => {
-  const [items, setItems] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const tarea = new Promise((resolve, reject) => {
-      resolve(products);
-      reject("error");
+    getProducts().then((resp) => {
+      setProducts(resp);
+      setIsLoading(false);
     });
-    tarea
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
   }, []);
 
   return (
     <>
-      <ItemList items={items} />
+      {isLoading ? (
+        <h2>Cargando productos..</h2>
+      ) : (
+        <ItemList products={products} />
+      )}
     </>
   );
 };
 
 export default ItemListContainer;
-

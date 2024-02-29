@@ -1,17 +1,20 @@
 import { CartWidget } from "../../common/CartWidget/CartWidget";
-import "./Navbar.css";
+import "./NavBar.css";
+import { Link } from "react-router-dom";
 
-export const Navbar = () => {
+export const NavBar = () => {
   return (
     <div>
       <nav class="navbar navbar-expand-lg botonera sticky-top">
         <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">
+          <a class="navbar-brand">
+          <Link to="/">
             <img
-              src="imagenes/nav.png"
+              src="./src/img/nav.png"
               alt="Logo Florentina yerba organica "
               class="scale-animation-log"
             />
+          </Link>
           </a>
           <button
             class="navbar-toggler"
@@ -27,32 +30,40 @@ export const Navbar = () => {
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
-                <a class="nav-link" href="pages/yerbas.html">
-                  Yerbas
+                <Link to="/">
+                <a class="nav-link">
+                  Home
                 </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/promos.html">
+                <Link>
+                <a class="nav-link">
                   Promos
                 </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/nosotros.html">
+                <Link>
+                <a class="nav-link">
                   Nosotros
                 </a>
+                </Link>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="pages/contacto.html">
+                <Link>
+                <a class="nav-link">
                   Contacto
                 </a>
+                </Link>
               </li>
             </ul>
           </div>
         </div>
-        <div>
-          <h4>Carrito</h4>
+
+        <Link to="/cart">
           <CartWidget />
-        </div>
+        </Link>
       </nav>
     </div>
   );

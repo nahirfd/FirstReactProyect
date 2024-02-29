@@ -1,21 +1,21 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import ItemCountContainer from "./components/common/itemCount/ItemCountContainer";
-
-import { Navbar } from "./components/layout/navbar/Navbar";
-import Count1 from "./components/pages/coun1/Count1";
-import Count2 from "./components/pages/count2/Count2";
-import ItemDetailContainer from "./components/pages/itemDetailContainer/ItemDetailContainer";
 import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
+import { NavBar } from "./components/layout/navbar/Navbar";
+import { Cart } from "./components/common";
+import ItemDetailContainer from "./components/pages/itemDetailContainer/ItemDetailContainer";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <ItemListContainer />
-      
-      <hr></hr>
-      <ItemDetailContainer />
-      
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
